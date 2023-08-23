@@ -5,12 +5,11 @@ module.exports = function override(config) {
   Object.assign(fallback, {
     crypto: require.resolve("crypto-browserify") ,
     stream: require.resolve("stream-browserify") ,
-    assert: require.resolve("assert") 
-    // http: false, // require.resolve("stream-http") 
-    // https: false, // require.resolve("https-browserify") 
-    // os: false, // require.resolve("os-browserify") 
-    // url: false, // require.resolve("url") 
-    // zlib: false, // require.resolve("browserify-zlib") 
+    assert: require.resolve("assert"),
+    http: require.resolve("stream-http"), 
+    https: require.resolve("https-browserify"),
+    url: require.resolve("url"), 
+    zlib: require.resolve("browserify-zlib") 
   });
   config.resolve.fallback = fallback;
   config.plugins = (config.plugins || []).concat([
